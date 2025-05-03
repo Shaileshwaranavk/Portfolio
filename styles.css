@@ -100,6 +100,7 @@ body {
     color: white;
     flex: 1;
     min-width: 300px;
+    margin-left: 60px;
 }
 
 .info {
@@ -155,7 +156,7 @@ button:hover {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    margin-left: 50px;
+    margin-left: 0px;
     max-width: 100%;
 }
 
@@ -238,12 +239,12 @@ button:hover {
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 700px;
     text-align: justify;
     color: white;
     font-size: 1rem;
     line-height: 1.8;
-    margin-left: 0;
+    margin-left: 80px;
     flex: 1;
     min-width: 300px;
     padding: 20px 0;
