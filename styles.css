@@ -156,7 +156,7 @@ button:hover {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    margin-left: 0px;
+    margin-left: 0;
     max-width: 100%;
 }
 
@@ -542,11 +542,11 @@ button:hover {
     .home-container, .about-container {
         padding: 0 15px;
     }
-    
+
     .img {
         margin-left: 20px;
     }
-    
+
     .about-content {
         margin-left: 0;
     }
@@ -556,15 +556,15 @@ button:hover {
     .info {
         font-size: 2.2rem;
     }
-    
+
     .role {
         font-size: 1.3rem;
     }
-    
+
     .home-content p, .about-content {
         font-size: 0.95rem;
     }
-    
+
     .skills-container img {
         width: 70px;
         height: 70px;
@@ -576,66 +576,66 @@ button:hover {
     .navbar {
         padding: 10px;
     }
-    
+
     .nav-links {
         gap: 15px;
     }
-    
+
     .nav-links a {
         font-size: 0.9rem;
         padding: 5px;
     }
-    
+
     .home-container {
         flex-direction: column-reverse;
         text-align: center;
     }
-    
+
     .home-content {
         text-align: center;
         margin-top: 20px;
     }
-    
+
     .buttons {
         justify-content: center;
     }
-    
+
     .img {
         margin-left: 0;
         margin-bottom: 20px;
         width: 300px;
     }
-    
+
     .about-container {
         flex-direction: column;
     }
-    
+
     .about-content {
         padding-top: 20px;
     }
-    
+
     .exp {
         padding: 15px;
     }
-    
+
     .project {
         flex-direction: column;
     }
-    
+
     .project img {
         width: 100%;
         height: 200px;
         margin-bottom: 15px;
     }
-    
+
     .project-content {
         width: 100%;
     }
-    
+
     .exp .img {
         margin-bottom: 15px;
     }
-    
+
     .exp-content {
         width: 100%;
     }
@@ -648,7 +648,7 @@ button:hover {
         right: 20px;
         top: 15px;
     }
-    
+
     .nav-links {
         display: none;
         flex-direction: column;
@@ -660,64 +660,64 @@ button:hover {
         padding: 10px 0;
         border-bottom: 1px solid #333;
     }
-    
+
     .nav-links.active {
         display: flex;
     }
-    
+
     .nav-links li {
         width: 100%;
         text-align: center;
     }
-    
+
     .nav-links a {
         display: block;
         padding: 10px;
     }
-    
+
     .info {
         font-size: 1.8rem;
     }
-    
+
     .role {
         font-size: 1.2rem;
     }
-    
+
     .home-content p, .about-content, .project-content p, .exp-content p {
         font-size: 0.9rem;
     }
-    
+
     .skills-container img {
         width: 60px;
         height: 60px;
         padding: 10px;
     }
-    
+
     button {
         padding: 10px 20px;
         font-size: 0.9rem;
     }
-    
+
     .about h1, .skills h1, .projects h1, .experience h1, .contact h1 {
         font-size: 1.5rem;
     }
-    
+
     .project-content h2, .exp-content h2 {
         font-size: 1.2rem;
     }
-    
+
     .exp-content h3 {
         font-size: 0.8rem;
     }
-    
+
     .contact-icons {
         gap: 15px;
     }
-    
+
     .contact-icon {
         padding: 8px;
     }
-    
+
     .contact-icon img {
         width: 30px;
         height: 30px;
@@ -728,18 +728,24 @@ button:hover {
     .info {
         font-size: 1.5rem;
     }
-    
+
     .role {
         font-size: 1rem;
     }
-    
+
     .img {
         width: 250px;
     }
-    
+
     .skills-container img {
         width: 50px;
         height: 50px;
         padding: 8px;
     }
 }
+
+/* ====== JavaScriptREQUIRED for Mobile Menu Toggle ======
+Include this in your HTML just before </body>:
+
+
+============================================== */
