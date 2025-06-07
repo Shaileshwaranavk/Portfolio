@@ -1,517 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shailesh's Portfolio</title>
-  <link rel="icon" href="img/Logo.png" type="image/x-icon" />
-  <style>
-    /* Reset and base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      background: #fafafa;
-      color: #333;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    /* Header & Navbar */
-    header {
-      background: #222;
-      color: white;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.8rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    /* Navigation links */
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-links li a {
-      padding: 0.5rem 0.75rem;
-      display: block;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-      border-radius: 4px;
-    }
-
-    .nav-links li a:hover,
-    .nav-links li a:focus {
-      background-color: #555;
-      color: #fff;
-    }
-
-    /* Mobile Menu Button (Hamburger) */
-    .mobile-menu-btn {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      width: 30px;
-      height: 25px;
-      justify-content: space-between;
-    }
-
-    .mobile-menu-btn span {
-      display: block;
-      height: 4px;
-      background-color: white;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    /* === Responsive styles === */
-    @media (max-width: 768px) {
-      .nav-links {
-        position: fixed;
-        top: 60px; /* height of header */
-        right: 0;
-        background-color: #222;
-        height: calc(100% - 60px);
-        width: 220px;
-        flex-direction: column;
-        padding: 1rem 1.5rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        box-shadow: -2px 0 10px rgba(0,0,0,0.5);
-      }
-
-      .nav-links.active {
-        transform: translateX(0);
-      }
-
-      .nav-links li {
-        margin: 1.2rem 0;
-      }
-
-      .mobile-menu-btn {
-        display: flex;
-      }
-    }
-
-    /* Main content padding to avoid hidden behind fixed header */
-    section {
-      padding: 100px 20px 40px 20px;
-      max-width: 900px;
-      margin: 0 auto 40px auto;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-
-    h1, h2, h3 {
-      margin-bottom: 15px;
-      color: #222;
-    }
-
-    /* Button style */
-    button {
-      background-color: #222;
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover,
-    button:focus {
-      background-color: #555;
-    }
-
-    /* Example for your home section layout */
-    .home-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .home-content {
-      flex: 1 1 350px;
-    }
-
-    .home-content .info {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
-
-    .home-content .info span {
-      color: #007acc;
-    }
-
-    .home-content .role {
-      font-weight: 700;
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-      color: #555;
-    }
-
-    .home-content p {
-      margin-bottom: 20px;
-      font-size: 1rem;
-      color: #444;
-    }
-
-    .home-container img.img {
-      flex: 1 1 300px;
-      max-width: 300px;
-      border-radius: 15px;
-    }
-
-    /* Social links */
-    .social {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .social-links li a img {
-      width: 32px;
-      height: 32px;
-      filter: grayscale(60%);
-      transition: filter 0.3s ease;
-    }
-
-    .social-links li a:hover img {
-      filter: grayscale(0);
-    }
-
-    /* Projects and Experience container */
-    .projects-container, .experience-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .project, .exp {
-      background: #f9f9f9;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex: 1 1 280px;
-      max-width: 350px;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .project img.img, .exp img.img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .project-content, .exp-content {
-      padding: 15px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-content h2, .exp-content h2 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #007acc;
-    }
-
-    .project-content p, .exp-content p {
-      flex-grow: 1;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-      color: #333;
-    }
-
-    .btn {
-      align-self: flex-start;
-      background-color: #007acc;
-      color: white;
-      padding: 8px 14px;
-      border-radius: 5px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-      text-align: center;
-    }
-
-    .btn:hover {
-      background-color: #005f99;
-    }
-
-    /* Contact icons */
-    .contact-icons {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 15px;
-    }
-
-    .contact-icon img {
-      width: 40px;
-      height: 40px;
-      filter: grayscale(70%);
-      transition: filter 0.3s ease;
-    }
-
-    .contact-icon:hover img {
-      filter: grayscale(0);
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shailesh's Portfolio</title>
+    <link rel="icon" href="img/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact Me</a></li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-  </header>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <!-- Navigation Bar -->
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+        <button class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
 
-  <section class="home" id="home">
-    <div class="home-container">
-      <div class="home-content">
-        <h1 class="info">Hi, I'm <br /><span>A V K Shaileshwaran</span></h1>
-        <p class="role">WEB DEVELOPER</p>
-        <p>
-          I am a CSE student passionate about web development, working on projects to learn new
-          technologies. I know HTML, CSS, JS for front-end and Python Django, MySQL for
-          back-end. My goal is to create scalable solutions that improve user experience and have a
-          positive impact.
-        </p>
-        <div class="buttons">
-          <a href="img/resume.pdf" download="A V K Shaileshwaran CV.pdf">
-            <button>Download CV</button>
-          </a>
+    <section class="home" id="home">
+        <div class="home-container">
+            <div class="home-content">
+                <h1 class="info">Hi, I'm <br><span>A V K Shaileshwaran</span></h1>
+                <p class="role">WEB DEVELOPER</p>
+                <p>I am a CSE student passionate about web development, working on projects to learn new technologies. I know HTML, CSS, JS for front-end and Python Django, MySQL for back-end. My goal is to create scalable solutions that improve user experience and have a positive impact.</p>
+                <div class="buttons">
+                    <a href="img/resume.pdf" download="A V K Shaileshwaran CV.pdf">
+                        <button>Download CV</button>
+                    </a>                    
+                </div>
+            </div>
+            <img src="img/home-img.png" class="img" alt="Me">
         </div>
-      </div>
-      <img src="img/home-img.png" class="img" alt="Me" />
-    </div>
-  </section>
+    </section>
 
-  <section class="social">
-    <ul class="social-links">
-      <li><a href="https://www.linkedin.com/in/avkshaileshwaran/" target="_blank" rel="noopener noreferrer"><img src="img/linkedin.png" alt="LinkedIn" /></a></li>
-      <li><a href="https://github.com/Shaileshwaranavk" target="_blank" rel="noopener noreferrer"><img src="img/github.png" alt="Github" /></a></li>
-      <li><a href="https://discordapp.com/users/avkshaileshwaran" target="_blank" rel="noopener noreferrer"><img src="img/discord.png" alt="Discord" /></a></li>
-      <li><a href="https://www.instagram.com/avks._/" target="_blank" rel="noopener noreferrer"><img src="img/instagram.png" alt="Instagram" /></a></li>
-      <li><a href="https://x.com/AVKShailesh" target="_blank" rel="noopener noreferrer"><img src="img/twitter.png" alt="X" /></a></li>
-    </ul>
-  </section>
 
-  <section class="about" id="about">
-    <h1>About</h1>
-    <p>
-      I am A V K Shaileshwaran, a Computer Science and Engineering student at the PERI Institute of
-      Technology, with a passion for web development, DevOps, and problem-solving. I am a Python
-      Full Stack developer with a specialization in building efficient web applications with Python,
-      Django, MySQL, HTML, and CSS. I have a strong command of Data Structures, Algorithms, and
-      Software Design, which enables me to develop optimized solutions to complex problems.
-      I have exposure to hands-on experience through internships working as a Python Full Stack
-      Developer and DevOps with projects such as Personalized Voice Assistant, AI-based Resume
-      Screening Platform, and an Ad Hoc Expertise Platform. I have worked extensively with
-      PyCharm and Visual Studio Code and used Figma as a tool. In addition, I have held
-      leadership positions as the Student Chairman of the Descience Open Source Club and Joint
-      Secretary of the Science & Humanities Club. I want to come up with innovative solutions that
-      bring business growth while improving user experiences; that way, I would be able to either
-      learn or evolve myself as a developer.
-    </p>
-  </section>
+    <section class="social">
+        <nav class="soc">
+            <div class="social-container">
+                <ul class="social-links">
+                    <li><a href="https://www.linkedin.com/in/avkshaileshwaran/" target="_blank"><img src="img/linkedin.png" alt="LinkedIn" ></a></li>
+                    <li><a href="https://github.com/Shaileshwaranavk" target="_blank"><img src="img/github.png" alt="Github"></a></li>
+                    <li><a href="https://discordapp.com/users/avkshaileshwaran" target="_blank"><img src="img/discord.png" alt="Discord"></a></li>
+                    <li><a href="https://www.instagram.com/avks._/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a></li>
+                    <li><a href="https://x.com/AVKShailesh" target="_blank"><img src="img/twitter.png" alt="X"></a></li>
+                </ul>
+            </div>  
+        </nav>           
+    </section>
 
-  <section class="skills" id="skills">
-    <h1>Skills</h1>
-    <div class="skills-container" style="text-align:center;">
-      <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer"><img src="img/python.png" alt="Python" style="width:50px; margin: 0 10px;" /></a>
-      <a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer"><img src="img/django.png" alt="Django" style="width:50px; margin: 0 10px;" /></a>
-      <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer"><img src="img/mysql.png" alt="MYSQL" style="width:50px; margin: 0 10px;" /></a>
-      <a href="https://html.com/" target="_blank" rel="noopener noreferrer"><img src="img/html.png" alt="HTML" style="width:50px; margin: 0 10px;" /></a>
-      <a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" rel="noopener noreferrer"><img src="img/css.png" alt="CSS" style="width:50px; margin: 0 10px;" /></a>
-      <a href="https://www.javascript.com/" target="_blank" rel="noopener noreferrer"><img src="img/js.png" alt="JS" style="width:50px; margin: 0 10px;" /></a>
-      <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer"><img src="img/figma.png" alt="figma" style="width:50px; margin: 0 10px;" /></a>
-      <a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer"><img src="img/canva.png" alt="canva" style="width:50px; margin: 0 10px;" /></a>
-    </div>
-  </section>
-
-  <section class="projects" id="projects">
-    <h1>Projects</h1>
-    <div class="projects-container">
-      <div class="project">
-        <img src="img/Voice_Assistant.png" class="img" alt="Personalized Voice Assistant" />
-        <div class="project-content">
-          <h2>Personalized Voice Assistant</h2>
-          <p>
-            Developed a Personalized Voice Assistant using Python, which can perform tasks like
-            sending emails, playing music, and searching the web. The assistant can also be
-            customized to perform additional tasks based on user requirements.
-          </p>
-          <a href="https://github.com/Shaileshwaranavk/Voice_Assistant" target="_blank" rel="noopener noreferrer" class="btn">View</a>
+    <section class="about" id="about">
+        <h1>About</h1>
+        <div class="about-container">
+            <img src="img/about-img.png" class="img" alt="Me">
+            <div class="about-content">
+                <p>I am A V K Shaileshwaran, a Computer Science and Engineering student at the PERI Institute of Technology, with a passion for web development, DevOps, and problem-solving. I am a Python Full Stack developer with a specialization in building efficient web applications with Python, Django, MySQL, HTML, and CSS. I have a strong command of Data Structures, Algorithms, and Software Design, which enables me to develop optimized solutions to complex problems. I have exposure to hands-on experience through internships working as a Python Full Stack Developer and DevOps with projects such as Personalized Voice Assistant, AI-based Resume Screening Platform, and an Ad Hoc Expertise Platform. I have worked extensively with PyCharm and Visual Studio Code and used Figma as a tool. In addition, I have held leadership positions as the Student Chairman of the Descience Open Source Club and Joint Secretary of the Science & Humanities Club. I want to come up with innovative solutions that bring business growth while improving user experiences; that way, I would be able to either learn or evolve myself as a developer.</p>
+            </div>
         </div>
-      </div>
-      <div class="project">
-        <img src="img/Image_Classification.png" class="img" alt="Image Classification" />
-        <div class="project-content">
-          <h2>Image Classification</h2>
-          <p>
-            The Image Classification application allows users to upload images and classify them using
-            a pre-trained CIFAR-10 model. It supports 10 classes, including airplane, dog, and cat,
-            and displays results in a GUI.
-          </p>
-          <a href="https://github.com/Shaileshwaranavk/Image_Classification" target="_blank" rel="noopener noreferrer" class="btn">View</a>
-        </div>
-      </div>
-      <div class="project">
-        <img src="img/Job_Horizon.png" class="img" alt="Ad Hoc Expertise Platform" />
-        <div class="project-content">
-          <h2>Ad Hoc Expertise Platform</h2>
-          <p>
-            Created an Ad Hoc Expertise Platform using Python, which allows users to connect with
-            experts in various fields. The platform uses a recommendation system to suggest experts
-            based on user preferences and requirements.
-          </p>
-          <a href="https://github.com/Shaileshwaranavk/Job_Horizon" target="_blank" rel="noopener noreferrer" class="btn">View</a>
-        </div>
-      </div>
-      <div class="project">
-        <img src="img/Corona_Tracker.png" class="img" alt="Corona Virus Tracker Application" />
-        <div class="project-content">
-          <h2>Corona Virus Tracker Application</h2>
-          <p>
-            The Corona Virus Tracker Application provides real-time COVID-19 data by scraping Worldometers,
-            allowing users to check statistics for any country. It offers export options (HTML, JSON,
-            Excel) and features a splash screen.
-          </p>
-          <a href="https://github.com/Shaileshwaranavk/Corona_Virus_Tracker_App" target="_blank" rel="noopener noreferrer" class="btn">View</a>
-        </div>
-      </div>
-      <div class="project">
-        <img src="img/Quizziz.png" class="img" alt="Quiz Application" />
-        <div class="project-content">
-          <h2>Quiz Application</h2>
-          <p>
-            This quiz app, built with Django, MySQL, and HTML/CSS, delivers unique question sets per
-            user. It calculates scores and features a live leaderboard showcasing top performers.
-            Demonstrates full-stack web development skills.
-          </p>
-          <a href="https://github.com/Shaileshwaranavk/Quizziz" target="_blank" rel="noopener noreferrer" class="btn">View</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="experience" id="experience">
-    <h1>Experience</h1>
-    <div class="experience-container">
-      <div class="exp">
-        <img src="img/Emayam.png" class="img" alt="Python Backend Developer Internship" />
-        <div class="exp-content">
-          <h2>Python Backend Developer</h2>
-          <h3>Emayam Technologies Private Limited | Apr 2025 - Present</h3>
-          <p>• Currently interning as a Python Backend Developer at Emayam Technologies, gaining exposure to REST APIs, Postman, Python backend, Django APIs, and related areas.</p>
-          <p>• Successfully completed a project and currently leading two more projects, contributing to their successful execution.</p>
-          <p>• Gaining valuable experience in backend development and project leadership, driving project success.</p>
+    <section class="skills" id="skills">
+        <h1>Skills</h1>
+        <nav class="ski">
+            <div class="skills-container">
+                <ul>
+                    <a href="https://www.python.org/" target="_blank"><img src="img/python.png" alt="Python"></a>
+                    <a href="https://www.djangoproject.com/" target="_blank"><img src="img/django.png" alt="Django"></a>
+                    <a href="https://www.mysql.com/" target="_blank"><img src="img/mysql.png" alt="MYSQL"></a>
+                    <a href="https://html.com/" target="_blank"><img src="img/html.png" alt="HTML"></a>
+                    <br>
+                    <a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank"><img src="img/css.png" alt="CSS"></a>
+                    <a href="https://www.javascript.com/" target="_blank"><img src="img/js.png" alt="JS"></a>
+                    <a href="https://www.figma.com/" target="_blank"><img src="img/figma.png" alt="figma"></a>
+                    <a href="https://www.canva.com/" target="_blank"><img src="img/canva.png" alt="canva"></a>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <section class="projects" id="projects">
+        <h1>Projects</h1>
+        <div class="projects-container">
+            <div class="project">
+                <img src="img/Voice_Assistant.png" class="img" alt="Project 1">
+                <div class="project-content">
+                    <h2>Personalized Voice Assistant</h2>
+                    <p>Developed a Personalized Voice Assistant using Python, which can perform tasks like sending emails, playing music, and searching the web. The assistant can also be customized to perform additional tasks based on user requirements.</p>
+                    <a href="https://github.com/Shaileshwaranavk/Voice_Assistant" target="_blank" class="btn">View</a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="img/Image_Classification.png" class="img" alt="Project 2">
+                <div class="project-content">
+                    <h2>Image Classification</h2>
+                    <p>The Image Classification application allows users to upload images and classify them using a pre-trained CIFAR-10 model. It supports 10 classes, including airplane, dog, and cat, and displays results in a GUI.</p>
+                    <a href="https://github.com/Shaileshwaranavk/Image_Classification" target="_blank" class="btn">View</a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="img/Job_Horizon.png" class="img" alt="Project 3">
+                <div class="project-content">
+                    <h2>Ad Hoc Expertise Platform</h2>
+                    <p>Created an Ad Hoc Expertise Platform using Python, which allows users to connect with experts in various fields. The platform uses a recommendation system to suggest experts based on user preferences and requirements.</p>
+                    <a href="https://github.com/Shaileshwaranavk/Job_Horizon" target="_blank" class="btn">View</a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="img/Corona_Tracker.png" class="img" alt="Project 3">
+                <div class="project-content">
+                    <h2>Corona Virus Tracker Application</h2>
+                    <p>The Corona Virus Tracker Application provides real-time COVID-19 data by scraping Worldometers, allowing users to check statistics for any country. It offers export options (HTML, JSON, Excel) and features a splash screen.</p>
+                    <a href="https://github.com/Shaileshwaranavk/Corona_Virus_Tracker_App" target="_blank" class="btn">View</a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="img/Quizziz.png" class="img" alt="Project 4">
+                <div class="project-content">
+                    <h2>Quiz Application</h2>
+                    <p>This quiz app, built with Django, MySQL, and HTML/CSS, delivers unique question sets per user. It calculates scores and features a live leaderboard showcasing top performers. Demonstrates full-stack web development skills.</p>
+                    <a href="https://github.com/Shaileshwaranavk/Quizziz" target="_blank" class="btn">View</a>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="exp">
-        <img src="img/Shiash.jpeg" class="img" alt="Python Full Stack Developer Internship" />
-        <div class="exp-content">
-          <h2>Python Full Stack Developer</h2>
-          <h3>Shiash Infotech Solutions Pvt Ltd | Oct 2024 - Apr 2025</h3>
-          <p>• Completed an internship where I learned Python basics, OOP concepts, Tkinter, and SQL.</p>
-          <p>• Worked on projects like a Currency Converter and To-Do List using Python and Tkinter.</p>
-          <p>• Developed a voice assistant named ‘Voxie’ using speech recognition and text-to-speech technologies.</p>
+    <section class="experience" id="experience">
+        <h1>Experience</h1>
+        <div class="experience-container">
+            <div class="exp">
+                <img src="img/Emayam.png" class="img" alt="PBE Internship">
+                <div class="exp-content">
+                    <h2>Python Backend Developer</h2>
+                    <h3>Emayam Technologies Private Limited | Apr 2025 - Present</h3>
+                    <p>• Currently interning as a Python Backend Developer at Emayam Technologies, gaining exposure to REST APIs, Postman, Python backend, Django APIs, and related areas.</p>
+                    <p>• Successfully completed a project and currently leading two more projects, contributing to their successful execution.</p>
+                    <p>• Gaining valuable experience in backend development and project leadership, driving project success.</p>
+                </div>
+            </div>
+
+            <div class="exp">
+                <img src="img/Shiash.jpeg" class="img" alt="Shiash Infotech">
+                <div class="exp-content">
+                    <h2>Python Full Stack Developer Intern</h2>
+                    <h3>Shiash Infotech Solutions | Aug 2024 - Nov 2024</h3>
+                    <p>• Developed and maintained web applications using Python, Django, MySQL, and React.</p>
+                    <p>• Built a Resume Screening Portal with AI-based candidate shortlisting.</p>
+                    <p>• Integrated front-end designs using HTML, CSS, and JavaScript to improve UI/UX.</p>
+                    <p>• Worked in an Agile team to deliver scalable and efficient solutions.</p>
+                </div>
+            </div>
+    
+            <div class="exp">
+                <img src="img/codsoft.jpg" class="img" alt="Python Internship">
+                <div class="exp-content">
+                    <h2>Python Developer Intern</h2>
+                    <h3>CodSoft | Mar 2024 - Apr 2024</h3>
+                    <p>• Built projects like a to-do list, calculator, and temperature converter.</p>
+                    <p>• Enhanced problem-solving skills and proficiency in libraries through practical application.</p>
+                </div>
+            </div>
+
+            <div class="exp">
+                <img src="img/younity.jpeg" class="img" alt="BDS Internship">
+                <div class="exp-content">
+                    <h2>Business Development Specialist Intern</h2>
+                    <h3>Younity.in | Dec 2023 - Jan 2024</h3>
+                    <p>• Promoted expert-led courses through outreach, Learnt Business/Marketing strategies.</p>
+                    <p>• Collaborated with experts to enhance course marketing and achieved targets, driving business growth.</p>
+                    <p>• Generated a revenue of 1K. </p>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="exp">
-        <img src="img/Technohacks.png" class="img" alt="Python Developer Internship" />
-        <div class="exp-content">
-          <h2>Python Developer</h2>
-          <h3>Technohacks | Aug 2024 - Sep 2024</h3>
-          <p>• Developed various Python projects such as To-Do List, Calculator, Temperature Converter, Random Password Generator, Music Player, ATM Simulator, and Rock-Paper-Scissors Game.</p>
-          <p>• Gained hands-on experience with new libraries and optimized programs for better performance.</p>
+    <section class="contact" id="contact">
+        <h1>Contact Me</h1>
+        <div class="contact-icons">
+            <a href="tel:+919025278164" class="contact-icon" target="_blank">
+                <img src="img/phone.png" alt="Phone" />
+            </a>
+            <a href="mailto:shaileshwaranavk@gmail.com" class="contact-icon" target="_blank">
+                <img src="img/gmail.png" alt="Email" />
+            </a>
+            <a href="https://wa.me/919025278164" class="contact-icon" target="_blank">
+                <img src="img/whatsapp.png" alt="WhatsApp" />
+            </a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <h1>Contact Me</h1>
-    <div class="contact-icons">
-      <a href="mailto:avkshaileshwaran@gmail.com" class="contact-icon" aria-label="Email">
-        <img src="img/email.png" alt="Email Icon" />
-      </a>
-      <a href="tel:+919878543210" class="contact-icon" aria-label="Phone">
-        <img src="img/phone.png" alt="Phone Icon" />
-      </a>
-      <a href="https://wa.me/919878543210" target="_blank" rel="noopener noreferrer" class="contact-icon" aria-label="WhatsApp">
-        <img src="img/whatsapp.png" alt="WhatsApp Icon" />
-      </a>
-    </div>
-  </section>
-
-  <script>
-    // Mobile menu toggle script
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      mobileMenuBtn.classList.toggle('active');
-    });
-
-    // Optional: close menu when a nav link is clicked (on mobile)
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-      });
-    });
-  </script>
+    </section>
+    
+    
 </body>
 </html>
