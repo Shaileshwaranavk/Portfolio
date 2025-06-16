@@ -1,94 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shailesh's Portfolio</title>
-    <link rel="icon" href="img/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shailesh's Portfolio</title>
+  <link rel="icon" href="img/Logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo-container">
-                <!-- Navigation Bar -->
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                </ul>
-            </div>
-        </nav>
-        <button class="mobile-menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
 
-    <section class="home" id="home">
-        <div class="home-container">
-            <div class="home-content">
-                <h1 class="info">Hi, I'm <br><span>A V K Shaileshwaran</span></h1>
-                <p class="role">WEB DEVELOPER</p>
-                <p>I am a CSE student passionate about web development, working on projects to learn new technologies. I know HTML, CSS, JS for front-end and Python Django, MySQL for back-end. My goal is to create scalable solutions that improve user experience and have a positive impact.</p>
-                <div class="buttons">
-                    <a href="img/resume.pdf" download="A V K Shaileshwaran CV.pdf">
-                        <button>Download CV</button>
-                    </a>                    
-                </div>
-            </div>
-            <img src="img/home-img.png" class="img" alt="Me">
+  <header>
+    <nav class="navbar">
+      <div class="logo-container">
+        <div class="Profile">
+          <a href="#home"><img src="img/profile.png" alt="Logo" /></a>
         </div>
-    </section>
-
-
-    <section class="social">
-        <nav class="soc">
-            <div class="social-container">
-                <ul class="social-links">
-                    <li><a href="https://www.linkedin.com/in/avkshaileshwaran/" target="_blank"><img src="img/linkedin.png" alt="LinkedIn" ></a></li>
-                    <li><a href="https://github.com/Shaileshwaranavk" target="_blank"><img src="img/github.png" alt="Github"></a></li>
-                    <li><a href="https://discordapp.com/users/avkshaileshwaran" target="_blank"><img src="img/discord.png" alt="Discord"></a></li>
-                    <li><a href="https://www.instagram.com/avks._/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a></li>
-                    <li><a href="https://x.com/AVKShailesh" target="_blank"><img src="img/twitter.png" alt="X"></a></li>
-                </ul>
-            </div>  
-        </nav>           
-    </section>
-
-    <section class="about" id="about">
-        <h1>About</h1>
-        <div class="about-container">
-            <img src="img/about-img.png" class="img" alt="Me">
-            <div class="about-content">
-                <p>I am A V K Shaileshwaran, a Computer Science and Engineering student at the PERI Institute of Technology, with a passion for web development, DevOps, and problem-solving. I am a Python Full Stack developer with a specialization in building efficient web applications with Python, Django, MySQL, HTML, and CSS. I have a strong command of Data Structures, Algorithms, and Software Design, which enables me to develop optimized solutions to complex problems. I have exposure to hands-on experience through internships working as a Python Full Stack Developer and DevOps with projects such as Personalized Voice Assistant, AI-based Resume Screening Platform, and an Ad Hoc Expertise Platform. I have worked extensively with PyCharm and Visual Studio Code and used Figma as a tool. In addition, I have held leadership positions as the Student Chairman of the Descience Open Source Club and Joint Secretary of the Science & Humanities Club. I want to come up with innovative solutions that bring business growth while improving user experiences; that way, I would be able to either learn or evolve myself as a developer.</p>
-            </div>
+        <div class="logo-text">
+          <a href="#home">A V K Shaileshwaran</a>
         </div>
-    </section>
+      </div>
 
-    <section class="skills" id="skills">
-        <h1>Skills</h1>
-        <nav class="ski">
-            <div class="skills-container">
-                <ul>
-                    <a href="https://www.python.org/" target="_blank"><img src="img/python.png" alt="Python"></a>
-                    <a href="https://www.djangoproject.com/" target="_blank"><img src="img/django.png" alt="Django"></a>
-                    <a href="https://www.mysql.com/" target="_blank"><img src="img/mysql.png" alt="MYSQL"></a>
-                    <a href="https://html.com/" target="_blank"><img src="img/html.png" alt="HTML"></a>
-                    <br>
-                    <a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank"><img src="img/css.png" alt="CSS"></a>
-                    <a href="https://www.javascript.com/" target="_blank"><img src="img/js.png" alt="JS"></a>
-                    <a href="https://www.figma.com/" target="_blank"><img src="img/figma.png" alt="figma"></a>
-                    <a href="https://www.canva.com/" target="_blank"><img src="img/canva.png" alt="canva"></a>
-                </ul>
-            </div>
-        </nav>
-    </section>
+      <!-- Mobile menu button -->
+      
+
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#experience">EXPERIENCE</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+    </nav>
+  </header>
+
+  <section class="home" id="home">
+    <div class="home-container">
+      <div class="home-content">
+        <h1 class="info">Hi, I'm <br><span>A V K Shaileshwaran</span></h1>
+        <p class="role">PYTHON DEVELOPER</p>
+        <p>I am a CSE student passionate about web development, working on projects to learn new technologies. I know HTML, CSS, JS for front-end and Python Django, MySQL for back-end. My goal is to create scalable solutions that improve user experience and have a positive impact.</p>
+        <div class="buttons">
+          <a href="img/resume.pdf" download="A V K Shaileshwaran CV.pdf">
+            <button>Download CV</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="social">
+    <nav class="soc">
+      <div class="social-container">
+        <ul class="social-links">
+          <li><a href="https://www.linkedin.com/in/avkshaileshwaran/" target="_blank"><img src="img/linkedin.png" alt="LinkedIn" ></a></li>
+          <li><a href="https://github.com/Shaileshwaranavk" target="_blank"><img src="img/github.png" alt="Github"></a></li>
+          <li><a href="https://discordapp.com/users/avkshaileshwaran" target="_blank"><img src="img/discord.png" alt="Discord"></a></li>
+          <li><a href="https://www.instagram.com/avks._/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a></li>
+          <li><a href="https://x.com/AVKShailesh" target="_blank"><img src="img/twitter.png" alt="X"></a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+
+<section class="about" id="about">
+  <div class="about-wrapper">
+    <h1>ABOUT ME</h1>
+    <div class="about-container">
+      <div class="about-left">
+        <h2>GET TO KNOW ME!</h2>
+        <p>I'm a Python Full Stack Developer passionate about building efficient web applications using Django, MySQL, HTML, and CSS. I’ve worked on projects like a Personalized Voice Assistant and an AI-based Resume Screener that reflect my skills in both web development and problem-solving.</p>
+        <p>I enjoy exploring DevOps, software design, and data structures to create optimized, scalable solutions. I also share insights and experiences from my development journey to help and connect with fellow tech enthusiasts.</p>
+        <p>I'm open to exciting opportunities where I can contribute, learn, and grow as a developer. If you think my skills and background align with what you’re looking for, feel free to reach out!</p>
+        <a href="#contact"><button class="contact-btn">Contact</button></a>
+      </div>
+      <div class="about-right">
+        <h2>MY SKILLS</h2>
+        <div class="skills-container">
+          <a href="https://www.python.org/" target="_blank"><img src="img/python.png" alt="Python"></a>
+          <a href="https://docs.djangoproject.com/en/5.2/" target="_blank"><img src="img/django.png" alt="Django"></a>
+          <a href="https://www.mysql.com/" target="_blank"><img src="img/mysql.png" alt="MySQL"></a>
+          <a href="https://html.com/" target="_blank"><img src="img/html.png" alt="HTML"></a>
+          <a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank"><img src="img/css.png" alt="CSS"></a>
+          <a href="https://www.javascript.com/" target="_blank"><img src="img/js.png" alt="JS"></a>
+          <a href="https://www.figma.com/" target="_blank"><img src="img/figma.png" alt="Figma"></a>
+          <a href="https://www.canva.com/" target="_blank"><img src="img/canva.png" alt="Canva"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <section class="projects" id="projects">
         <h1>Projects</h1>
