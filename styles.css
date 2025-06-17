@@ -913,9 +913,22 @@ body {
 }
 
 .research {
-    padding: 0 20px;
-    margin-top: 50px;
+    padding: 0 40px;
     background-color: rgb(246, 246, 246);
+    text-align: center;
+    padding: 40px 20px;
+    width: 100%;
+
+
+    height :100%;
+    width: 100%;
+
+    /* Optional: set height if needed */
+    min-height: 1vh;
+
+    /* Optional: overlay effect */
+    position: relative;
+    z-index: 1;
 }
 
 .research h1 {
@@ -932,7 +945,7 @@ body {
     gap: 30px;
     padding: 20px;
     align-items: center;
-    margin-top: 0;
+    margin-top: 10px;
 }
 
 .research-item {
@@ -971,7 +984,8 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
     transition: color 0.3s ease-in-out;
-    text-align: center;
+    text-align: left;
+    line-height: 1.2;
     color :  black;
 }
 
@@ -981,7 +995,7 @@ body {
 
 .research-content p {
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.5rem;
     color: #ccc;
     text-align: justify;
     color :  black;
@@ -1004,6 +1018,10 @@ body {
     color: #1e3a8a;
 }
 @media (max-width: 992px) {
+
+    .research {
+        padding: 10 15px;
+    }
   .research-item {
     flex-direction: column;
     align-items: center;
@@ -1033,7 +1051,8 @@ body {
 
 @media (max-width: 576px) {
   .research {
-    padding: 0 10px;
+    padding: 0 30px;
+    margin-top: 0px;
   }
 
   .research h1 {
@@ -1046,5 +1065,237 @@ body {
 
   .research-content p {
     font-size: 0.8rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .social {
+    display: none; /* ✅ Hide floating social bar on small screens */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navbar container */
+  .navbar {
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+  }
+
+  /* Hamburger menu (visible) */
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 1001;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 2px;
+  }
+
+  /* Hide and show nav links */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #eee;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  /* Home */
+  .home-container {
+    padding: 60px 15px;
+    text-align: center;
+    flex-direction: column-reverse;
+  }
+
+  .info {
+    font-size: 1.8rem;
+  }
+
+  .role {
+    font-size: 1.2rem;
+  }
+
+  .home-content p {
+    font-size: 0.95rem;
+  }
+
+  /* Social bar hidden on mobile */
+  .social {
+    display: none;
+  }
+
+  /* About */
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .about-left p {
+    font-size: 0.95rem;
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .skills-container img {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Projects */
+  .project {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .project img {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 15px;
+  }
+
+  .project-content {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .project-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .project-content p {
+    font-size: 0.9rem;
+  }
+
+  /* Research */
+  .research-item {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .research-item img {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 15px;
+    object-fit: cover;
+  }
+
+  .research-content {
+    width: 100%;
+  }
+
+  .research-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .research-content p {
+    font-size: 0.85rem;
+  }
+
+  /* Experience */
+  .exp {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .exp .img {
+    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .exp-content {
+    width: 100%;
+  }
+
+  .exp-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .exp-content p {
+    font-size: 0.9rem;
+  }
+
+  /* Contact */
+  .contact-icons {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .contact-icon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .contact h1 {
+    font-size: 1.6rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Headings */
+  .about h1,
+  .projects h1,
+  .experience h1,
+  .contact h1,
+  .research h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
   }
 }
