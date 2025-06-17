@@ -1093,7 +1093,7 @@ body {
     justify-content: space-between;
     width: 25px;
     height: 20px;
-    background: none;
+    background: black;
     border: none;
     cursor: pointer;
     position: absolute;
