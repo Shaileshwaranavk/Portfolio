@@ -964,6 +964,7 @@ body {
     flex-direction: column;
     margin: 0;
     text-decoration: none;
+    color :  black;
 }
 
 .research-content h2 {
@@ -972,6 +973,7 @@ body {
     margin-bottom: 10px;
     transition: color 0.3s ease-in-out;
     text-align: center;
+    color :  black;
 }
 
 .research-item:hover .research-content h2 {
@@ -983,6 +985,7 @@ body {
     line-height: 1.6;
     color: #ccc;
     text-align: justify;
+    color :  black;
 }
 
 .research-item:hover .research-content p {
