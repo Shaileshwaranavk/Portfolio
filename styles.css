@@ -1312,7 +1312,7 @@ body {
 @media (max-width: 768px) {
   .mobile-menu-btn {
     position: absolute;
-    left: 550px;
+    left: 500px;
     top: 35%;
     transform: translateY(-50%);
     z-index: 1001;
