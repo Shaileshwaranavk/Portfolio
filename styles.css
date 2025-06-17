@@ -1308,3 +1308,14 @@ body {
     margin-bottom: 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+  }
+}
+
