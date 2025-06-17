@@ -1093,7 +1093,7 @@ body {
     justify-content: space-between;
     width: 25px;
     height: 20px;
-    background: black;
+    background: white;
     border: none;
     cursor: pointer;
     position: absolute;
@@ -1106,7 +1106,7 @@ body {
     display: block;
     height: 3px;
     width: 100%;
-    background-color: white;
+    background-color: black;
     border-radius: 2px;
   }
 
