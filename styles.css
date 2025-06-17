@@ -1001,4 +1001,48 @@ body {
 .research-content a.btn:hover {
     color: #1e3a8a;
 }
+@media (max-width: 992px) {
+  .research-item {
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    padding: 20px;
+  }
 
+  .research-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .research-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .research-content p {
+    font-size: 0.85rem;
+  }
+
+  .research-content a.btn {
+    font-size: 0.85rem;
+    text-align: center;
+    align-self: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .research {
+    padding: 0 10px;
+  }
+
+  .research h1 {
+    font-size: 1.5rem;
+  }
+
+  .research-content h2 {
+    font-size: 1rem;
+  }
+
+  .research-content p {
+    font-size: 0.8rem;
+  }
+}
