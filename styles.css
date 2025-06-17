@@ -1018,6 +1018,9 @@ body {
     color: #1e3a8a;
 }
 @media (max-width: 992px) {
+      .nav a{
+    font-size: 0.75rem;
+  }
 
     .research {
         padding: 10 15px;
@@ -1054,6 +1057,7 @@ body {
     padding: 0 30px;
     margin-top: 0px;
   }
+    
 
   .research h1 {
     font-size: 1.5rem;
@@ -1072,6 +1076,9 @@ body {
 @media (max-width: 576px) {
   .social {
     display: none; /* ✅ Hide floating social bar on small screens */
+  }
+  .nav a{
+    font-size: 0.75rem;
   }
 }
 
