@@ -1123,7 +1123,9 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-top: 1px solid #eee;
   }
-
+  .nav a{
+    font-size: 1rem;
+  }
   .nav-links.active {
     display: flex;
   }
