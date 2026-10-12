@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
 });
 
 const projects = [
-  { number: "01", title: "Personalized Voice Assistant", tag: "Python", description: "Performs everyday tasks like sending emails, playing music, and searching the web—with room for custom commands.", href: "https://github.com/Shaileshwaranavk/Voice_Assistant", tone: "paper" },
+  { number: "01", title: "Veera — Desktop Voice Assistant", tag: "Python · Windows", description: "Say \"Hey Veera\" to run your PC by voice: open apps, search the web, manage files, read documents with OCR, check email, and control volume and brightness. Speech runs locally; Gemini only writes summaries.", href: "/Veera-Setup.bat", tone: "paper" },
   { number: "02", title: "Image Classification", tag: "CIFAR-10", description: "A desktop app that classifies uploaded images into ten categories using a pre-trained model.", href: "https://github.com/Shaileshwaranavk/Image_Classification", tone: "bubble" },
   { number: "03", title: "Ad Hoc Expertise Platform", tag: "Recommendations", description: "Connects people with specialists and recommends experts around each user's needs.", href: "https://github.com/Shaileshwaranavk/Job_Horizon", tone: "paper" },
   { number: "04", title: "Corona Virus Tracker", tag: "Data", description: "Scrapes live global statistics and exports country reports as HTML, JSON, or Excel.", href: "https://github.com/Shaileshwaranavk/Corona_Virus_Tracker_App", tone: "sun" },
@@ -213,6 +213,8 @@ function ProjectCard({ project, wide }: { project: (typeof projects)[number]; wi
     <div className="flex items-start justify-between"><span className="font-display text-4xl">CH. {project.number}</span><span className="rounded-sm border-2 border-current px-2 py-1 text-[10px] font-bold uppercase">{project.tag}</span></div>
     <h3 className="mt-6 max-w-md text-2xl font-bold">{project.title}</h3>
     <p className="mt-3 max-w-xl text-sm leading-relaxed opacity-75">{project.description}</p>
-    <a href={project.href} target="_blank" rel="noreferrer" className="mt-auto flex items-center gap-2 self-start border-b-2 border-current pt-5 text-sm font-bold uppercase">View on GitHub <ArrowUpRight size={17} /></a>
+    {project.href.startsWith("/")
+      ? <div className="mt-auto pt-5"><a href={project.href} download className="inline-flex items-center gap-2 rounded-md border-2 border-ink bg-sun px-4 py-2 text-sm font-bold uppercase text-ink transition-transform hover:-translate-y-0.5"><Download size={17} /> Download &amp; Install</a><p className="mt-2 text-[11px] opacity-70">Windows 10/11 · run the file to install Veera on this PC</p></div>
+      : <a href={project.href} target="_blank" rel="noreferrer" className="mt-auto flex items-center gap-2 self-start border-b-2 border-current pt-5 text-sm font-bold uppercase">View on GitHub <ArrowUpRight size={17} /></a>}
   </article>;
 }
